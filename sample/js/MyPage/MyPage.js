@@ -6,11 +6,8 @@ class MyPage extends Page{
         super('myPage');
 
         this.css({
-            'background-size': 'cover',//'contain',//'cover',
-            'background-position': 'center center',
-            'background-color': '#999',
-
-            'color':'white',
+            'background-color': 'white',
+            'color':'black',
         });
     }
 
@@ -29,7 +26,7 @@ class MyUnit extends Template{
         super.render();
         this.template(`
             <Sample {label:'マイページ'} />
-            <button @btn >トップへ戻る</button>
+            <button @btn >トップページへ</button>
         `);
 
         this.obj('btn').tap(()=>{

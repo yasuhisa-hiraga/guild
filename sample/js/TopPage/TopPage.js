@@ -6,10 +6,7 @@ class TopPage extends Page{
         super('topPage');
 
         this.css({
-            'background-size': 'cover',//'contain',//'cover',
-            'background-position': 'center center',
-            'background-color': '#aaa',
-
+            'background-color': 'black',
             'color':'white',
         })
     }
@@ -29,7 +26,7 @@ class TopUnit extends Template{
         super.render();
         this.template(`
             <Sample {label:'トップページ'} />
-            <button @btn >ページ遷移</button>
+            <button @btn >マイページへ</button>
         `);
 
         this.obj('btn').tap(()=>{

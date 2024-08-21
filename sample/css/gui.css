@@ -1,0 +1,37 @@
+/**** タッチしたところにポイントを出す ****/
+/*
+ [注意事項]
+ このポインタ表示は順番的に最上位階層に来るため、下階層へのクリックイベントを
+ 通さなくなります。
+ それを回避するためには pointer-events: none; が必要となります。
+*/
+.touchPointer{
+    pointer-events: none; /* 下の要素にマウスイベントを通す */
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    background-color: rgba( 100, 100, 255, 0.7);
+    border-radius: 50%;
+    animation-name: touchPointer_active;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    opacity: 0;
+    z-index: 99999;
+}
+
+@keyframes touchPointer_active{
+  0% {
+    transform: scale(.3);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
